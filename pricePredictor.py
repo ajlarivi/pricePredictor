@@ -9,7 +9,6 @@ from sklearn import preprocessing
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score 
 from sklearn.model_selection import cross_val_score
-from sklearn import svm
 
 #reuires anaconda
 #reuiqres sklearn
@@ -39,6 +38,7 @@ def main():
     print("Encoding values...")
     encoded = filteredFilledLAdf.apply(preprocessing.LabelEncoder().fit_transform)
     
+    #define independant and dependant variables
     feature_cols = ['price', 'year', 'manufacturer', 'condition', 'fuel', 'odometer', 'paint_color']
     X=encoded[feature_cols]
     y=encoded.price
